@@ -1,4 +1,3 @@
-![Signup Page Architecture](https://github.com/user-attachments/assets/00d8ccab-ca32-428b-a5ff-3bccea80ee0d)
 # Stego-Based Authentication System
 
 This project implements a steganography-based authentication system that enhances security by integrating user credentials with stego images for the login process.
@@ -18,7 +17,7 @@ This project implements a steganography-based authentication system that enhance
    - Image analysis for embedding credentials using steganography.
    - Password encryption.
    - Password matching validation.
-![Signup Page Architecture](https://github.com/user-attachments/assets/9d85c16b-d687-45d5-bcc8-ccffbd754b73)
+<img src="https://github.com/user-attachments/assets/9d85c16b-d687-45d5-bcc8-ccffbd754b73" alt="description" width="300" height="200">
 
 ### Login Process
 1. **User Inputs**:
@@ -29,8 +28,7 @@ This project implements a steganography-based authentication system that enhance
    - Extraction of credentials from the stego image.
    - Validation of extracted credentials against user-provided input.
    - Secure login to the dashboard.
-
-![login](https://github.com/user-attachments/assets/83150705-9cf0-4a18-9358-cbd3eedc8ba2)
+<img src="https://github.com/user-attachments/assets/83150705-9cf0-4a18-9358-cbd3eedc8ba2" alt="description" width="300" height="200">
 
 ![Login System Architecture](https://github.com/user-attachments/assets/ddc9d844-87ee-469b-a887-cf899920678a)
 
