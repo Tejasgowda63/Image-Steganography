@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Steganography</title>
+    <style>
+         #myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+#hero{
+    position: relative;
+    z-index: 10;
+}
+#h{
+    z-index: -1;
+}
+#hero video{
+    height: 100vh;
+    width: 100%;
+    background-position: absolute;
+    z-index:10;
+    object-fit: cover;
+}
+#hero .content{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 20;
+    top: 0;
+    left: 0;
+}
+
+    </style>
+</head>
+
+<body>
+    <div id="hero">
+        <div class="content">
+           
+                {% include 'navbar.html' %}
+            
+        </div>
+   <div id="h">
+    <video autoplay muted loop id="myVideo" class="img-fluid">
+        <source src="static/lock.mp4" type="video/mp4">
+      </video>
+    </div>
+</div>
+    
+</body>
+</html>

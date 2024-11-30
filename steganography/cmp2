@@ -1,0 +1,40 @@
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+
+def analyze_pixel_quality(image_path):
+    # Read the image
+    image = cv2.imread(image_path)
+
+    # Split the image into its RGB channels
+    b, g, r = cv2.split(image)
+
+    # Compute pixel intensity statistics
+    pixel_stats = {
+        'Red': np.mean(r),
+        'Green': np.mean(g),
+        'Blue': np.mean(b)
+    }
+
+    return pixel_stats
+
+def plot_pixel_quality_bar_graph(pixel_stats):
+    # Plot a bar graph of pixel intensity means for each channel
+    channels = list(pixel_stats.keys())
+    values = list(pixel_stats.values())
+
+    plt.bar(channels, values, color=['red', 'green', 'blue'])
+    plt.title('Pixel Intensity Means for Each RGB Channel')
+    plt.xlabel('RGB Channels')
+    plt.ylabel('Mean Pixel Intensity')
+    plt.show()
+
+# Example usage:
+image_path = "C:/Users/tejas/django/steganography/encrypted_images/im.jpg"
+pixel_stats = analyze_pixel_quality(image_path)
+print("Pixel Intensity Statistics:")
+for channel, mean_intensity in pixel_stats.items():
+    print(f"{channel}: Mean Pixel Intensity = {mean_intensity}")
+
+# Plot the bar graph
+plot_pixel_quality_bar_graph(pixel_stats)

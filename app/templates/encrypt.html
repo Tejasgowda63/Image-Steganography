@@ -1,0 +1,47 @@
+
+<html>
+    <head>
+        <title>Encryption</title>
+        <style>
+            input{
+                display: block;
+            }
+            .t{
+             visibility: hidden;
+            }
+            .text-center{
+                margin-bottom: 60px;
+            }
+            .ta{
+                margin-top: 30px;
+            }
+            .container{
+                margin-top: -290px;
+            }
+        </style>
+    </head>
+    <body>
+    {% include 'navbar.html' %}
+    
+    <div class="container"> 
+        <h1 class="t" >.</h1>    
+  </br></br>
+    <h1 class="text-center" >Encrypt your Image</h1>
+    <form method="post" action="{% url 'encryption' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+    <label>Select an Image</label>
+    <input style="margin-top: 20px;" type="file" name="image" accept="image/png" required class="form-control-file"/>
+    </div>
+    <div class="form-group">
+        <label style="margin-top: 20px;">Enter The Text:</label>
+        <textarea style="margin-top: 20px;" id="ta" name="text" required class="form-control"></textarea>
+        </div>
+        <button type="submit" style="margin-top: 20px;" class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+    {%if message %}
+    <p align="center">{{message}}</p>
+    {% endif %}
+    </body>
+</html>

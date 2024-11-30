@@ -1,0 +1,389 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title> Navbar </title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<!-- <link rel="stylesheet" href="static/nav.css"> -->
+
+<style>
+    nav{
+    background: black;
+	float: left;
+    margin: 0px;
+	overflow: hidden;
+	position: fixed;
+    width: 100%;  
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    margin-bottom: 15%;
+    }
+
+
+    .cn{
+    color: white;
+    margin: 10px;
+    font-size: 25px;
+    font-weight: 650;
+    display: flex;
+    list-style: none;
+    gap: 100px;
+    margin-left: 13%;
+    }
+    .en button{
+        background-color: red;
+        color: white;
+        border-radius: 30px;
+        border: none;
+        margin-top: 0px;
+        padding: 5px;
+        width: 100px;
+        
+    }
+    .lg{
+        display: flex;
+        color: white;
+        list-style: none;
+        font-size: 25px;
+        font-weight: 650;
+        margin: 10px;
+        gap: 20px;
+    }
+    .lg li{
+        margin-top: 5px;
+    }
+    .lg img{
+        /* margin-top: 5px; */
+    }
+    .en{
+        margin-left: 200px;
+        margin-top: 20px;
+    }
+    .en .lo{
+    margin-right: 50px;
+    }
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.bx{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    padding: 20px 100px;
+    background-size: cover;
+    background-position: center;
+}
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  
+}
+.wrapper{
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    background-color: rgba(25, 24, 24, 0.87);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform:  scale(0);
+    transition: transform .5s ease;
+    transition: height .2s ease;
+}
+
+.wrapper.active{
+        height: 750px;
+        margin-top: 10%;
+    }
+.wrapper .form-box{
+    width: 100%;
+    padding: 40px;
+}
+.form-box h2{
+font-size: 2em;
+color: white;
+text-align: center;
+}
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #162938;
+    margin: 30px 0;
+}
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color:  white;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -5px;
+}
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+.input-box .icon{
+position: absolute;
+right: 8px;
+font-size: 1.2em;
+color: white;
+line-height: 57px;
+}
+.remember-forget{
+    font-size: .9em;
+    color: white;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.remember-forget label input{
+    accent-color: white;
+    margin-right: 3px;
+}
+.remember-forget a{
+    color: white;
+    text-decoration: none;
+}
+.remember-forget a:hover{
+    text-decoration: underline;
+}
+
+.login-register{
+    font-size: .9em;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+.login-register p a{
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+.login-register p a:hover{
+    text-decoration: underline;
+}
+.ea button{
+    background-color: red;
+    color: white;
+    width: 100%;
+    height: 45px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    margin-left: 10px;
+    margin-top: 30px;
+    }
+    .wrapper .icon-close{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 45px;
+        height: 45px;
+        background: #162938;
+        font-size: 2em;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom-left-radius: 20px;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    .wrapper .form-box.login{
+        /* display: none; */
+        transition: transform ;
+    }
+
+    .wrapper.active .form-box.login{
+        transition: none;
+        transform: translateX(-400px);
+    }
+    .wrapper .form-box.register{
+        position: absolute;
+        transition: none;
+        transform: translateX(400px);
+    }
+    
+    .wrapper.active .form-box.register{
+        transition: transform .18s ease ;
+        transform: translateX(0);
+    }
+   .wrapper.active-popup{
+    transform: scale(1);
+   }
+
+   .wrapper.marg{
+    margin-left: 40%;
+    margin-top: 15%;
+   }
+
+</style>
+</head>
+<body>
+<nav>
+        <ul class="lg">
+            <img src= {% static '/search.png' %} width="50px" height="50px">
+            <li><a href="/" id="btn">IMAGE STEGANOGRAPHY </a></li>
+        </ul>
+        <ul class="cn">
+            {% if request.session.customer %}
+            <li><a href="/encryption">Encryption</a></li>
+            <li><a href="/decryption">Decryption</a></li>
+            {% else %}
+            <li><a >Encryption</a></li>
+            <li><a >Decryption</a></li>
+            {% endif %}
+           
+        </ul>
+        <ul class="en">
+            {% if request.session.customer %}
+           <button class="lo"><a href="{% url 'logout' %}">Logout</a></button>
+           {% else %}
+           <button class="lo">Login</button>
+           {% endif %}
+        </ul>
+    </nav>
+    {% if signupSuccess %}
+    {{ signupSuccess }}
+{% endif %}
+
+{% block content %}
+{% endblock %}
+</body>
+
+        <div class="wrapper">
+            <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+            <div class="form-box login">
+                <h2>Login</h2>
+                <form action="/login" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="input-box">
+                        <spam class="icon"><ion-icon name="mail"></ion-icon></spam>
+                        </spam>
+                        <input type="email" required value="{{values.email}}" name="email">
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="file" name="password" accept="image/png" required class="form-control-file"/>
+                    </div>
+                    <!-- <div class="input-box">
+                        <spam class="icon"><ion-icon name="lock-closed"></ion-icon>
+                        </spam>
+                        <input type="password" required name="password">
+                        <label>Password</label>
+                    </div> -->
+                    <div class="remember-forget">
+                        <label><input type="checkbox">Remember Me</label>
+                        <a href="#">Forget Password</a>
+                    </div>
+                    <div class="ea">
+                    <button class="lo">Login</button>
+                    </div>
+              
+                    <div class="login-register">
+                        <p>Do not have an account?<a href="#" class="register-link"> Register</a></p>
+                    </div>
+                    {% if error%}
+                        <script> alert('{{error}}') </script>
+                    {% endif %}
+                </form>
+        </div>
+
+        <div class="form-box register">
+            <h2>Registration</h2>
+            <form action="/signup" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="input-box">
+                    <spam class="icon"><ion-icon name="person-circle"></ion-icon></spam>
+                    </spam>
+                    <input type="password" required name="name" value="{{values.name}}">
+                    <label>Name</label>
+                </div>
+                <div class="input-box">
+                    <spam class="icon"><ion-icon name="mail"></ion-icon></spam>
+                    </spam>
+                    <input type="password" required name="email" id=""	value="{{values.email}}" >
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <spam class="icon"><ion-icon name="call"></ion-icon></spam>
+                    </spam>
+                    <input type="password" required name="phone" value="{{values.phone}}">
+                    <label>Phone</label>
+                </div>
+                <div class="input-box">
+                    <input type="file" name="image" accept="image/png" required class="form-control-file"/>
+                    </div>
+                <div class="input-box">
+                    <spam class="icon"><ion-icon name="lock-closed"></ion-icon>
+                    </spam>
+                    <input type="password" required name="password">
+                    <label>Password</label>
+                </div>
+                <div class="input-box">
+                    <spam class="icon"><ion-icon name="lock-closed"></ion-icon>
+                    </spam>
+                    <input type="password" required name="confirm_password">
+                    <label>Password</label>
+                </div>
+                <div class="remember-forget">
+                    <label><input type="checkbox">I agree to the terms & conditions</label>
+                </div>
+                <div class="ea">
+                <button class="lo">Register</button>
+                </div>
+          
+                <div class="login-register">
+                    <p>Already have an account?<a href="#" class="login-link"> Login</a></p>
+                </div>
+            </form>
+    </div>
+        </div>
+   
+        <scripts>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script src="{% static 'index.js' %}"></script>
+    </scripts>
+ 
+    </html>
